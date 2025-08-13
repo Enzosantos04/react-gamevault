@@ -21,7 +21,7 @@ export default function Card({
       <img src={imageUrl} />
       <h2>{title}</h2>
       <p>
-        <b>rating: {rating}</b>
+        <b>Rating: {rating}</b>
       </p>
       <p>Release date: {releaseDate}</p>
       <div className="card-text">
