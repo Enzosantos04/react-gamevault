@@ -1,0 +1,122 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-body {
+    background-color: #fff;
+    padding: 2rem;
+    max-height: 80vh;
+    max-width: 800px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    animation: modal-fade-in 0.3s ease-out;
+    color: #333;
+    font-weight: bolder;
+}
+
+.modal-body h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-close-btn {
+
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.modal-close-btn:hover {
+    background-color: #f9fafb;
+    color: #374151;
+    transform: scale(1.05);
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95);
+    background-color: #e5e7eb;
+}
+
+.modal-body .input-container {
+    width: 100%;
+}
+
+
+
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-container input {
+    width: 100%;
+    padding: 0.75rem 0.875rem;
+    margin-top: 0.5rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+}
+
+.input-container input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.input-container input:hover:not(:focus) {
+    border-color: #b8c1cc;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.input-container input::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
