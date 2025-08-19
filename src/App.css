@@ -15,7 +15,6 @@ body {
     width: 100vw;
     padding: 40px 16px;
     box-sizing: border-box;
-
 }
 
 .container button {
@@ -29,6 +28,7 @@ body {
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
     transition: background 0.2s, box-shadow 0.2s;
     margin-top: 20px;
+    margin: 12px;
 }
 
 .container button:hover,
