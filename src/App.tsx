@@ -4,11 +4,19 @@ import type { GameData } from "./interface/GameData";
 import "./App.css";
 import { useState } from "react";
 import { CreateModal } from "./create-modal/create-modal";
+import { CreateUserModal } from "./create-modal/login-modal";
 
 export default function GameList() {
   const { data } = useGameData();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
+  const handleUserOpenModal = () => {
+    setIsUserModalOpen(true);
+  };
+  const handleUserCloseModal = () => {
+    setIsUserModalOpen(false);
+  };
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -23,6 +31,9 @@ export default function GameList() {
           <h1>Gamevault</h1>
           <button onClick={handleOpenModal} className="btn-secondary">
             New Game
+          </button>
+          <button onClick={handleUserOpenModal} className="btn-secondary">
+            New User
           </button>
         </header>
         <main className="main-content">
@@ -40,6 +51,9 @@ export default function GameList() {
           </div>
         </main>
         {isModalOpen && <CreateModal closeModal={handleCloseModal} />}
+        {isUserModalOpen && (
+          <CreateUserModal closeModal={handleUserCloseModal} />
+        )}
       </div>
     </div>
   );
